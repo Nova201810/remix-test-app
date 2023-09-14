@@ -18,7 +18,7 @@ export default function StepIntro() {
           name="user"
           type="text"
           defaultValue={loaderData?.fields.user?.value}
-          style={hasUserError ? { color: 'red' } : {}}
+          style={hasUserError ? { borderColor: 'red' } : {}}
         />
       </label>
       {hasPhoneError && (
@@ -30,7 +30,7 @@ export default function StepIntro() {
           name="phone"
           type="text"
           defaultValue={loaderData?.fields.phone?.value}
-          style={hasUserError ? { color: 'red' } : {}}
+          style={hasUserError ? { borderColor: 'red' } : {}}
         />
       </label>
     </>

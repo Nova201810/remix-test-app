@@ -17,7 +17,7 @@ export default function StepDocument() {
           name="document"
           type="text"
           defaultValue={loaderData?.fields.document?.value}
-          style={hasDocumentError ? { color: 'red' } : {}}
+          style={hasDocumentError ? { borderColor: 'red' } : {}}
         />
       </label>
     </>

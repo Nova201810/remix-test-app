@@ -7,6 +7,9 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 import sourceMapSupport from "source-map-support";
+import bodyParser from "body-parser";
+
+import setupMocker from "./mocks/index.js";
 
 sourceMapSupport.install();
 installGlobals();
@@ -65,6 +68,9 @@ function createDevRequestHandler() {
     // 2. tell dev server that this app server is now ready
     broadcastDevReady(await build);
   });
+
+  app.use(bodyParser.json());
+  setupMocker(app);
 
   return async (req, res, next) => {
     try {

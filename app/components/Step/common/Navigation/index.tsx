@@ -1,6 +1,8 @@
 import { NavLink, useNavigation } from "@remix-run/react";
 
-export default function Navigation({ step }: { step: 0 | 1 | 2 | 3 | 4 }) {
+import { STEPS } from "~/constants/form";
+
+export default function Navigation({ step }: { step: typeof STEPS[number] }) {
   const navigation = useNavigation();
 
   return (
