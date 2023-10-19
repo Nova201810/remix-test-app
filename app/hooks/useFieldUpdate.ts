@@ -1,17 +1,27 @@
-import { useFetcher } from "@remix-run/react";
-import { ChangeEvent, HTMLProps } from "react";
+import { useState, useEffect, ChangeEvent, HTMLProps } from "react";
+import { useNavigation } from "@remix-run/react";
 
-export const useFieldUpdate = (baseOnChange: HTMLProps<HTMLInputElement>['onChange']) => {
-  //const fetcher = useFetcher()!;
-  const updateField = (event: ChangeEvent<HTMLInputElement>) => {
-    if (baseOnChange) {
-      baseOnChange(event);
+type Props = {
+  initError: boolean | string;
+  onChange?: HTMLProps<HTMLInputElement>['onChange'];
+};
+
+export const useFieldUpdate = ({ initError, onChange }: Props) => {
+  const { state } = useNavigation();
+  const [error, setError] = useState(initError);
+
+  useEffect(() => {
+    if (state === 'idle') {
+      setError(initError);
     }
-    //const { value: newValue, name } = event.target;
-    //const formData = new FormData();
-    //formData.append(name, newValue);
-    //fetcher.submit(formData, { method: "PUT", encType: "multipart/form-data" });
+  }, [state]);
+
+  const updateField = (event: ChangeEvent<HTMLInputElement>) => {
+    setError(false);
+    if (onChange) {
+      onChange(event);
+    }
   };
 
-  return { updateField };
+  return { error, updateField };
 };

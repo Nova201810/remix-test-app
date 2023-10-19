@@ -16,21 +16,17 @@ type Props = {
 } & Omit<HTMLProps<HTMLInputElement>, 'name' | 'type'>;
 
 export default function LabelledRadio({ name, label, field, ...inputProps }: Props) {
-  const { updateField } = useFieldUpdate(inputProps.onChange);
-  const hasError = !!field?.error;
-
   return (
     <label className="LabelledRadio">
       <input
         className={cn(
           'LabelledRadio__Input',
-          { 'LabelledRadio__Input--error': hasError },
+          { 'LabelledRadio__Input--error': !!field?.error },
         )}
         name={name}
         type="radio"
         defaultChecked={field?.value === inputProps?.value}
         {...inputProps}
-        onChange={updateField}
       />
       <div className="LabelledRadio__Label">{label}</div>
     </label>

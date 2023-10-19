@@ -24,3 +24,20 @@
 .FileUploader__Input--error {
   border-color: var(--error);
 }
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.FileUploader__Spinner {
+  fill: var(--text);
+  height: 40px;
+  width: 40px;
+  animation: rotate 1s linear infinite;
+}

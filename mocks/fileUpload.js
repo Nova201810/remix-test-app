@@ -29,7 +29,6 @@ const fileUploadMock = {
       } else {
         let filesInfo = [];
         const files = request.files.document;
-        console.log({files})
         const filesArray = Array.isArray(files) ? files : [files];
         filesArray.forEach(file => {
           const fileId = uid();

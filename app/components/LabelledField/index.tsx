@@ -16,20 +16,19 @@ type Props = {
 } & Omit<HTMLProps<HTMLInputElement>, 'name'>;
 
 export default function LabelledField({ name, label, field, type, ...inputProps }: Props) {
-  const { updateField } = useFieldUpdate(inputProps.onChange);
-  const hasError = !!field?.error;
+  const { error, updateField } = useFieldUpdate({ initError: field?.error, onChange: inputProps.onChange });
 
   return (
     <label className="LabelledField">
       <div className="LabelledField__Label">{label}</div>
-      {hasError && (
-        <div className="LabelledField__Error">{field.error}</div>
+      {error && (
+        <div className="LabelledField__Error">{error}</div>
       )}
       <input
         className={cn(
           'LabelledField__Input',
           { 'LabelledField__Input_Date': type === 'date' },
-          { 'LabelledField__Input--error': hasError },
+          { 'LabelledField__Input--error': error },
         )}
         name={name}
         defaultValue={field?.value as string}
