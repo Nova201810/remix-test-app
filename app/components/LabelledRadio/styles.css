@@ -1,0 +1,29 @@
+.LabelledRadio {
+  display: flex;
+  align-items: center;
+}
+
+.LabelledRadio__Input {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.LabelledRadio__Input::after {
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: var(--field-border);
+  border-radius: 50%;
+}
+
+.LabelledRadio__Input--error::after {
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: var(--field-border);
+  border-color: var(--error);
+  border-radius: 50%;
+}

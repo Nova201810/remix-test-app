@@ -1,0 +1,23 @@
+.Success {
+  margin: 24px auto;
+  display: flex;
+}
+
+.Success__Icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  fill: var(--success);
+  margin-right: 16px;
+}
+
+.Success__Content_Hint {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.Success__Content_Info {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 24px;
+}

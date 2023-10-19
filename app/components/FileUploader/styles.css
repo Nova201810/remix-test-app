@@ -1,0 +1,26 @@
+.FileUploader__Error {
+  margin-top: 4px;
+  color: var(--error);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.FileUploader__Label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.FileUploader__Input {
+  width: 100%;
+  margin-top: 12px;
+  background: var(--white);
+  padding: 8px 0;
+  border-top: var(--border-divider);
+  border-bottom: var(--border-divider);
+  border-radius: 0;
+}
+
+.FileUploader__Input--error {
+  border-color: var(--error);
+}

@@ -1,0 +1,13 @@
+.Navigation {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Navigation > * {
+  flex-basis: 100%;
+}
+
+.Navigation__Back {
+  margin-right: 24px;
+}

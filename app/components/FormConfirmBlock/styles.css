@@ -1,0 +1,11 @@
+.FormConfirmBlock {
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--base-bg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.FormConfirmBlock__Content {
+  margin-right: 16px;
+}

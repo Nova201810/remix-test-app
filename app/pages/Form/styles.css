@@ -1,0 +1,10 @@
+.Form {
+  font-family: system-ui, sans-serif;
+  line-height: 1.8;
+}
+
+.Form__Heading {
+  padding-bottom: 12px;
+  border-bottom: var(--border-divider);
+  margin-bottom: 24px;
+}

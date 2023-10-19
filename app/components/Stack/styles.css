@@ -1,0 +1,24 @@
+.Stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.Stack--size-s > * {
+  margin-top: 8px;
+}
+
+.Stack--size-m > * {
+  margin-top: 16px;
+}
+
+.Stack--size-l > * {
+  margin-top: 24px;
+}
+
+.Stack--size-xl > * {
+  margin-top: 32px;
+}
+
+.Stack > *:first-child {
+  margin-top: 0;
+}

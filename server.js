@@ -7,7 +7,6 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 import sourceMapSupport from "source-map-support";
-import bodyParser from "body-parser";
 
 import setupMocker from "./mocks/index.js";
 
@@ -69,7 +68,6 @@ function createDevRequestHandler() {
     broadcastDevReady(await build);
   });
 
-  app.use(bodyParser.json());
   setupMocker(app);
 
   return async (req, res, next) => {

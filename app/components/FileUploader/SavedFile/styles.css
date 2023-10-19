@@ -1,0 +1,24 @@
+.SavedFile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SavedFile__Name {
+  font-size: 18px;
+}
+
+.SavedFile__Button {
+  color: var(--white);
+  border-radius: var(--base-border-radius);
+  padding: 4px var(--base-padding);
+}
+
+.SavedFile__Button-Delete {
+  background: var(--error);
+}
+
+.SavedFile__Button-Recover {
+  color: var(--white);
+  background: var(--success);
+}

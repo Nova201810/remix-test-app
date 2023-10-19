@@ -1,0 +1,62 @@
+.Button {
+  padding: var(--base-padding);
+  border: var(--button-border);
+  border-radius: var(--base-border-radius);
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.Button__Spinner {
+  fill: var(--white);
+  height: 24px;
+  width: 24px;
+  animation: rotate 1s linear infinite;
+}
+
+.Button--primary {
+  background: var(--action);
+  color: var(--white);
+}
+.Button--primary:hover {
+  background-color: var(--button-primary-hover-bg);
+}
+.Button--primary:active {
+  background-color: var(--button-primary-active-bg);
+}
+.Button--primary:focus {
+  background-color: var(--button-primary-active-bg);
+}
+
+.Button--secondary {
+  background: var(--white);
+  color: var(--action);
+}
+.Button--secondary:hover {
+  background-color: var(--button-secondary-hover-bg);
+}
+.Button--secondary:active {
+  background-color: var(--button-secondary-active-bg);
+}
+.Button--secondary:focus {
+  background-color: var(--button-secondary-active-bg);
+}
+
+.Button--borderless {
+  background: transparent;
+  border: none;
+  color: var(--action);
+}

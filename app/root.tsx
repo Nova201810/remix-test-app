@@ -9,11 +9,17 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import globalStyles from "~/styles/global.css";
+import resetStyles from "~/styles/reset.css";
 import ErrorBoundary from "~/components/ErrorBoundary";
+import { stylesLinks } from "~/constants/stylesLinks";
 
 export { ErrorBoundary };
 
 export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: resetStyles },
+  { rel: "stylesheet", href: globalStyles },
+  ...stylesLinks(),
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 

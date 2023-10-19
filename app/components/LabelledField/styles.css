@@ -1,0 +1,33 @@
+.LabelledField__Error {
+  margin-top: 4px;
+  color: var(--error);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.LabelledField__Label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.LabelledField__Input {
+  width: 100%;
+  margin-top: 12px;
+  border: var(--field-border);
+  padding: var(--base-padding);
+  border-radius: var(--base-border-radius);
+  background: var(--white);
+}
+
+.LabelledField__Input_Date {
+  border: none;
+  border-top: var(--border-divider);
+  border-bottom: var(--border-divider);
+  border-radius: 0;
+  padding: var(--base-padding) 0;
+}
+
+.LabelledField__Input--error {
+  border-color: var(--error);
+}

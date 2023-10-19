@@ -1,0 +1,46 @@
+:root {
+  --white: #FFFFFF;
+  --text: #1A1A1A;
+  --error: #D31919;
+  --success: #06903A;
+  --action: #000090;
+  --button-border-color: #000090;
+  --field-border-color: #A4A4A4;
+  --divider-border-color: #DFDFDF;
+  --base-bg: #EAEAEA;
+  --button-primary-hover-bg: #2D2DA6;
+  --button-primary-active-bg: #0E0E61;
+  --button-secondary-hover-bg: #E6E9FF;
+  --button-secondary-active-bg: #D6DBFF;
+  --field-border: 2px solid var(--field-border-color);
+  --button-border: 2px solid var(--button-border-color);
+  --border-divider: 1px solid var(--divider-border-color);
+  --base-border-radius: 4px;
+  --base-padding: 8px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--base-bg);
+  padding: 32px 16px;
+  font-family: system-ui, sans-serif;
+}

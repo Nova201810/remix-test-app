@@ -1,0 +1,17 @@
+.LabelledFieldset__Legend {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.LabelledFieldset__Legend_Error {
+  margin-top: 4px;
+  color: var(--error);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.LabelledFieldset__Fields {
+  margin-top: 12px;
+}
