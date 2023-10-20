@@ -1,5 +1,4 @@
 import { ActionArgs, LinksFunction, LoaderArgs, json, redirect } from "@remix-run/node";
-import { Params } from "@remix-run/react";
 
 import FormContent, { links as formLinks } from "~/pages/Form";
 import { validateForm } from "~/helpers/validator";
@@ -9,9 +8,8 @@ import { FormData, RequestFormData, FormFields } from "~/@types/form";
 import { STEPS } from "~/constants/form";
 import { submitForm } from "~/api/submitForm.server";
 import { getRoute, PAGES } from "~/helpers/getRoute";
+import { getStep } from "~/helpers/getStep";
 import { MODAL_PARAM_KEY, MODAL_STATE } from "~/constants/errorModal";
-
-const getStep = (params: Params) => (params.step ? +params.step : 0) as typeof STEPS[number];
 
 export const links: LinksFunction = () => [
   ...formLinks(),
@@ -37,7 +35,10 @@ export async function loader({ request, params }: LoaderArgs) {
   }
 
   try {
-    const fields = await getFormState();
+    let fields = {};
+    if (step !== 0) {
+      fields = await getFormState();
+    }
     return json({ step, fields, error: false });
   } catch {
     searchParams.set(MODAL_PARAM_KEY, MODAL_STATE.VISIBLE);
