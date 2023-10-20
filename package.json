@@ -1,14 +1,15 @@
 {
+  "name": "remix-test-app",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
     "icons": "npx @svgr/cli --out-dir app/components/icons -- app/icons",
     "icons:watch": "npm-watch icons",
     "dev:svg": "run-s icons icons:watch",
     "dev:remix": "remix dev --manual -c \"node server.js\"",
     "dev": "run-p dev:*",
+    "build": "npm run icons && remix build",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "typecheck": "tsc"
   },
